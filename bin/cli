@@ -1,0 +1,88 @@
+#!/usr/bin/env node
+'use strict';
+
+// MODULES //
+
+var fs = require( 'fs' ),
+	path = require( 'path' ),
+	pkginfo = require( 'pkginfo' ),
+	parseArgs = require( 'minimist' ),
+	notifier = require( 'update-notifier' ),
+	opts = require( './opts.json' ),
+	cp = require( './../lib' );
+
+
+// VARIABLES //
+
+var args,
+	dest,
+	pkg;
+
+
+// INIT //
+
+process.stdout.on( 'error', process.exit );
+
+
+// PACKAGE INFO //
+
+pkg = pkginfo.read( require.main );
+process.title = pkg.package.name;
+
+
+// PACKAGE UPDATES //
+
+notifier( { 'pkg': pkg.package } ).notify();
+
+
+// ARGUMENTS //
+
+args = parseArgs( process.argv.slice( 2 ), opts );
+
+
+// HELP //
+
+function onClose() {
+	process.exit( 1 );
+}
+
+if ( args.help ) {
+	fs.createReadStream( path.join( __dirname, 'usage.txt' ) )
+		.pipe( process.stdout )
+		.on( 'close', onClose );
+    return;
+}
+
+
+// VERSION //
+
+if ( args.version ) {
+	console.log( pkg.package.version );
+	return;
+}
+
+
+// COPY //
+
+function onCopy( error ) {
+	if ( error ) {
+		throw error;
+	}
+}
+opts = {};
+
+if ( args.hasOwnProperty( 'template' ) ) {
+	opts.template = args.template;
+}
+if ( args.hasOwnProperty( 'versions' ) ) {
+	opts.versions = args.versions.split( ',' );
+}
+
+if ( args._.length ) {
+	dest = args._[ 0 ];
+} else {
+	dest = process.cwd();
+}
+cp( dest, opts, onCopy );
+
+
