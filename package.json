@@ -13,7 +13,7 @@
     }
   ],
   "bin": {
-    "travisyml": "./bin/cli"
+    "circleciyml": "./bin/cli"
   },
   "scripts": {
     "test": "mocha",
