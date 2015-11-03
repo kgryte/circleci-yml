@@ -50,6 +50,7 @@ To specify particular language versions against which to build, set the `version
 ``` javascript
 cp( 'path/to/a/directory', {
 	'versions': [
+		'5',
 		'4',
 		'0.12',
 		'0.10',
@@ -127,7 +128,7 @@ Options:
   -h,    --help                Print this message.
   -V,    --version             Print the package version.
   -tmpl  --template [name]     Template name. Default: 'nodejs'.
-         --versions            Language versions; e.g., 4,0.12,...,iojs.
+         --versions            Language versions; e.g., 5,4,0.12,...,iojs.
 ```
 
 
@@ -148,7 +149,7 @@ $ circleciyml ./../some/other/directory
 To specify particular language versions against which to build, set the `versions` option using a comma separated list.
 
 ``` bash
-$ circleciyml --versions=4,0.12,iojs
+$ circleciyml --versions=5,4,0.12,iojs
 ```
 
 
