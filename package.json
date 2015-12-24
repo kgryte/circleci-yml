@@ -1,64 +1,64 @@
 {
-	"name": "@kgryte/circleci-yml",
-	"version": "1.0.3",
-	"description": "Creates a circle.yml file.",
-	"author": {
-		"name": "Athan Reines",
-		"email": "kgryte@gmail.com"
-	},
-	"contributors": [
-		{
-			"name": "Athan Reines",
-			"email": "kgryte@gmail.com"
-		}
-	],
-	"bin": {
-		"circleciyml": "./bin/cli"
-	},
-	"scripts": {
-		"test": "mocha",
-		"test-cov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
-		"codecov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/codecov/coverage --report lcovonly -- -R spec && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
-	},
-	"main": "./lib",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/kgryte/circleci-yml.git"
-	},
-	"keywords": [
-		"utilities",
-		"utils",
-		"utility",
-		"circle.yml",
-		"dotfile",
-		"cli",
-		"circleci"
-	],
-	"bugs": {
-		"url": "https://github.com/kgryte/circle-yml/issues"
-	},
-	"dependencies": {
-		"@kgryte/noop": "^1.0.0",
-		"minimist": "^1.1.2",
-		"mustache": "^2.2.1",
-		"pkginfo": "^0.3.0",
-		"update-notifier": "^0.6.0",
-		"utils-merge2": "^1.0.0",
-		"validate.io-contains": "^1.0.0",
-		"validate.io-function": "^1.0.2",
-		"validate.io-object": "^1.0.4",
-		"validate.io-string-array": "^1.0.0",
-		"validate.io-string-primitive": "^1.0.0"
-	},
-	"devDependencies": {
-		"chai": "3.x.x",
-		"codecov.io": "^0.1.5",
-		"istanbul": "^0.4.1",
-		"jshint": "2.x.x",
-		"jshint-stylish": "2.x.x",
-		"mkdirp": "^0.5.1",
-		"mocha": "2.x.x",
-		"proxyquire": "^1.6.0"
-	},
-	"license": "MIT"
+  "name": "@kgryte/circleci-yml",
+  "version": "1.0.4",
+  "description": "Creates a circle.yml file.",
+  "author": {
+    "name": "Athan Reines",
+    "email": "kgryte@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Athan Reines",
+      "email": "kgryte@gmail.com"
+    }
+  ],
+  "bin": {
+    "circleciyml": "./bin/cli"
+  },
+  "scripts": {
+    "test": "mocha",
+    "test-cov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
+    "codecov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/codecov/coverage --report lcovonly -- -R spec && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
+  },
+  "main": "./lib",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kgryte/circleci-yml.git"
+  },
+  "keywords": [
+    "utilities",
+    "utils",
+    "utility",
+    "circle.yml",
+    "dotfile",
+    "cli",
+    "circleci"
+  ],
+  "bugs": {
+    "url": "https://github.com/kgryte/circle-yml/issues"
+  },
+  "dependencies": {
+    "@kgryte/noop": "^1.0.0",
+    "minimist": "^1.1.2",
+    "mustache": "^2.2.1",
+    "pkginfo": "^0.3.0",
+    "update-notifier": "^0.6.0",
+    "utils-merge2": "^1.0.0",
+    "validate.io-contains": "^1.0.0",
+    "validate.io-function": "^1.0.2",
+    "validate.io-object": "^1.0.4",
+    "validate.io-string-array": "^1.0.0",
+    "validate.io-string-primitive": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "3.x.x",
+    "codecov.io": "^0.1.5",
+    "istanbul": "^0.4.1",
+    "jshint": "2.x.x",
+    "jshint-stylish": "2.x.x",
+    "mkdirp": "^0.5.1",
+    "mocha": "2.x.x",
+    "proxyquire": "^1.6.0"
+  },
+  "license": "MIT"
 }
